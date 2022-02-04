@@ -1,0 +1,12 @@
+ul {
+    display: flex;
+}
+
+img{
+    height: 100px;
+    width: 100px;
+}
+
+#topnavbar_links{
+    float: right;
+}
