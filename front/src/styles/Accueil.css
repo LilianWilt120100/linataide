@@ -1,0 +1,12 @@
+#content{
+    display: flex;
+}
+
+#left {
+    margin-right: 12px;
+    
+}
+
+#right{
+    width:70%;
+}
