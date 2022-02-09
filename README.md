@@ -1,3 +1,8 @@
+# Linataide
+
+Bénévolat pour l'entreprise Linataide - Aide au développement d'une application de gestion de clients / factures / documents ...
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
