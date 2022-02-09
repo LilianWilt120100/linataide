@@ -11,6 +11,11 @@ export default class MenuVertical extends Component {
     window.location.href = 'http://localhost:3000/test';
   }
 
+  goToVueClient(e) {
+    e.preventDefault();
+    window.location.href = 'http://localhost:3000/clients';
+  }
+
   render() {
     const { activeItem } = this.state
     const styleLink = document.createElement("link");
@@ -49,7 +54,7 @@ export default class MenuVertical extends Component {
             <Menu.Item
               name='Voir les clients'
               active={activeItem === 'Voir les clients'}
-              onClick={this.handleItemClick}
+              onClick={(e)=>this.goToVueClient(e)}
             >
               Voir les clients
             </Menu.Item>

@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const cookieParser = require("cookie-parser");
+const session = require("express-session");
+const bodyParser = require("body-parser");
 const Database = require('./Database');
 
 const app = express();
@@ -13,7 +15,9 @@ app.use(cors({
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
 }));
-app.use(cookieParser());
+
+app.use(cookieParser())
+app.use(bodyParser.urlencoded({ extended: true }));
 
 const db = new Database({
     user:'root',
@@ -38,27 +42,13 @@ app.get('/', (req, res) => {
 });
 
 
-app.get('/clients' ,(req, res) => {
-    if (res) {
-      db.query("SELECT * FROM clients")
-        .then((result) => {
-          res.send(result)
-        })
-        .catch((err) => {
-          if (err) {
-            console.log(err);
-            res.status(404).send({
-              statusCode: 404,
-              id: 1,
-              message: err.data,
-              content: err
-            })
-          }
-        })
-    }
-});
+
 
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`)
 });
+
+
+require('./clients/clients.js')(app,db);
+require('./rdv/rdv.js')(app,db);

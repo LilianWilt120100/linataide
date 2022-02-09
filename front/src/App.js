@@ -10,6 +10,7 @@ import { render } from '@testing-library/react';
 import { Test } from './Components/Test';
 import {Navbar} from './Components/Navbar';
 import './styles/Accueil.css'
+import { VueClient } from './Components/VueClients';
 
 function App() {
   return (
@@ -31,6 +32,8 @@ function App() {
               <Switch>          
 
                 <Route exact path='/test' element={<Test />} />
+                <Route exact path='/clients' element={<VueClient />} />
+
               </Switch>
             </div>
         </div>
