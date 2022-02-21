@@ -1,0 +1,24 @@
+#choix{
+    padding-bottom: 2em;
+}
+
+a{
+    padding-right:2em;
+}
+
+#title{
+    padding-bottom: 1.8em;
+}
+
+#formulaire{
+    border: 1.3px solid #aeaeae;
+    border-radius: 5px;
+    padding-left:1em;
+
+}
+
+#boutons{
+    height:50px;
+    padding-right:10em;
+
+}

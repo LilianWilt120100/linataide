@@ -8,7 +8,6 @@ const Database = require('./Database');
 const app = express();
 const port = 3001;
 
-
 app.use(express.json());
 app.use(cors({
   origin: true,
@@ -17,6 +16,7 @@ app.use(cors({
 }));
 
 app.use(cookieParser())
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const db = new Database({

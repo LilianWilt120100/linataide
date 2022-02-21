@@ -84,5 +84,43 @@ module.exports = function (app, db) {
           }
         })
     });
+
+
+
+
+
+    app.post(`/createclient`, (req, res) => {
+      let nom = req.body.nom;
+      let prenom = req.body.prenom;
+      let email = req.body.email;
+      let adresse = req.body.adresse;
+      let codepostal = req.body.codepostal;
+      let ville = req.body.ville;
+
+      db.query(`INSERT INTO clients (nom, prenom, email, adresse, codepostal, ville) VALUES (?,?,?,?,?,?)`, [
+        nom,
+        prenom,
+        email,
+        adresse,
+        codepostal,
+        ville
+      ])
+      .then((result) => {
+        //res.send(result)
+        res.send("Client créé")
+      })
+      .catch((err) => {
+        if (err) {
+          console.log(err);
+          res.status(404).send({
+            statusCode: 404,
+            id: 1,
+            message: err.data,
+            content: err
+          })
+        }
+      })
+       
+    })
     
   }

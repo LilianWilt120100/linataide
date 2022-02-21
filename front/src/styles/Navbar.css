@@ -3,10 +3,17 @@ ul {
 }
 
 img{
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
 }
 
 #topnavbar_links{
     float: right;
 }
+
+#topnavbar{
+    background-color: antiquewhite;
+    border: 1px solid #dfb285;
+    border-radius: 5px;
+}
+

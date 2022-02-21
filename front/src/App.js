@@ -11,6 +11,8 @@ import { Test } from './Components/Test';
 import {Navbar} from './Components/Navbar';
 import './styles/Accueil.css'
 import { VueClient } from './Components/VueClients';
+import {CreerClient} from './Components/CreerClient';
+
 
 function App() {
   return (
@@ -33,6 +35,7 @@ function App() {
 
                 <Route exact path='/test' element={<Test />} />
                 <Route exact path='/clients' element={<VueClient />} />
+                <Route exact path='/creerclients' element={<CreerClient />} />
 
               </Switch>
             </div>

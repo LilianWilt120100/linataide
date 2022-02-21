@@ -10,3 +10,10 @@
 #right{
     width:70%;
 }
+
+hr{
+    border:solid 1px white;
+    width: 96%;
+    height: 1px;
+    
+    }

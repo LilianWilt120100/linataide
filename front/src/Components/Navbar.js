@@ -7,7 +7,7 @@ import {
     Route,
     Link
   } from "react-router-dom";
-import logo from '../assets/logo.png';
+import logo from '../assets/logo-sfond.png';
 import Button from './Button';
 
 export class Navbar extends Component{
@@ -18,7 +18,6 @@ export class Navbar extends Component{
             <Link to="/#" ><img src={logo} alt="logo" /></Link>
             <div id="topnavbar_links">
         
-            <Button onClick={(e) => console.log(e)} width="120px" height="35px" color="lightgreen" fSize="16px" float="right">Test</Button> 
             </div>
         </div>
         </>
