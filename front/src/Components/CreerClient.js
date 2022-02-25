@@ -24,8 +24,10 @@ export class CreerClient extends Component{
         e.preventDefault();
         /**let alerte="";*/
         if (this.state.nom != null || this.state.prenom != null) {
-          //let regex = new RegExp('([0-9][0-9][0-9][0-9])-([0-9][0-9])-([0-9][0-9])');
-          //if (regex.test(this.state.startDate) && regex.test(this.state.endDate)) {
+        let regexEmail= new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
+
+        let regexCP= new RegExp('([0-9][0-9][0-9][0-9][0-9])');
+        if (regexEmail.test(this.state.email) && regexCP.test(this.state.cp)) {
             axios.post(`http://localhost:3001/createclient`, {
               nom: this.state.nom,
               prenom: this.state.prenom,
@@ -36,7 +38,7 @@ export class CreerClient extends Component{
             })
               .then((result) => {
                   //this.setState({ error: result.data.message })
-                  alert(result);
+                  alert("Client créé avec succès");
                 
               }).catch((err) => {
                 this.setState({ error: err.message })
@@ -45,10 +47,10 @@ export class CreerClient extends Component{
               })
           } else {
             this.setState({ error: "Format invalide" })
-            alert("Error " + this.state.error);
+            alert("Vérifier si email et code postal sont valides");
     
           }
-    
+        }
         
     
       }
